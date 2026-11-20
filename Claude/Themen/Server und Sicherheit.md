@@ -14,3 +14,6 @@ aktualisiert: 2026-11-20
 - Stopgap in den Images: `session.upload_progress.enabled=0`, `session.use_strict_mode=1`, als `php_admin_flag` im FPM-Pool; WordPress-Images (Apache/mod_php) via `conf.d/zz-*.ini`
 - Details und Branch-Stand: [[di-magento2]]
 - ecom-middleware (PHP 8.5, keine Uploads): zusätzlich nginx-Multipart-Sperre (403) und `file_uploads=Off`; Details [[ecom-middleware]]
+
+## SBOM-Monitoring (Dependency-Track)
+- Icinga2-Agent speist per Trivy SBOMs der laufenden Images nach Dependency-Track (`dt.rndtech.de`); CVE-Check meldet Schwachstellen. Details: [[inf-udpm-icinga2-agent-docker]]

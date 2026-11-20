@@ -28,7 +28,7 @@ aktualisiert: 2026-11-20
 - Prod: Images werden nach AWS ECR gespiegelt (Account 981570960232, eu-central-1) und auf ECS betrieben. Docker-Hub-Tag ≠ ECR-Kopie ≠ laufende Task — Rollout über [[aws-services]] bzw. `php -v` im laufenden Container verifizieren (aus Session 2026-10-21)
 
 ## Abhängigkeiten / Verknüpfungen
-- Base-Image `thecustomsolutions/php-fpm:<php>` aus separatem Repo (dort u.a. redis-Extension)
+- Base-Image `thecustomsolutions/php-fpm:<php>` kommt aus [[di-php]] (dort u.a. redis-Extension)
 - Alle Shop-Images (`shop-m2-madsack`, `shop-mediengruppe-bayern`, `shop-hildesheim-sub`, `shop-rnz`, `shop-ovb-abo`, `shop-dumont-v2`, `shop-m2-cz`, `shop-heilbronner-stimme`, …) bauen auf dem hier erzeugten Magento-Image auf
 - [[aws-services]] prüft, welche ECR-Images/Tasks mit welcher PHP-Version laufen
 - `ecom-middleware` und die WordPress-Images sind eigene Repos (PHP 8.5 bzw. Apache/mod_php), nicht von di-magento2 abgeleitet

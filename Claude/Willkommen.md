@@ -21,6 +21,10 @@ Projektnotizen liegen unter `Projekte/`, Zuordnung zum Repo über `repo_remote` 
 - [[aws-services]] – ECS-Tasks und PHP-Versionen der laufenden Images (mol-cluster-production, prod-shops)
 - [[di-magento2]] – Magento-2.4.7-Base-Image für alle Shops (Docker, PHP 8.2/8.3)
 - [[ecom-middleware]] – Symfony-Middleware (Shopify-Webhooks), PHP 8.5, ECS mol-cluster-production
+- [[wp-aboplus-karte]] – Übergangs-Redirect-Container (php:8.5-apache) statt altem WordPress-Plugin, ECS
+- [[di-php]] – eigenes PHP-Base-Image (thecustomsolutions/php-fpm) je PHP-Version, Base für di-magento2
+- [[mm-madsack-datatrans-payment]] – Magento-Zahlungsmodul für Datatrans (Reservierung, autoSettle=false)
+- [[inf-udpm-icinga2-agent-docker]] – Icinga2-Monitoring-Agent (Docker), Trivy→Dependency-Track-Feeder
 
 - [[magento-dev]] – lokale Magento-Dev-Umgebung (`bin/dev`), Rollout-Historie Madsack production24
 

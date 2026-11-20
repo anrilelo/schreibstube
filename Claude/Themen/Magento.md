@@ -12,5 +12,6 @@ aktualisiert: 2026-11-20
 ## Checkout-Konfiguration (Magento 2.4.7)
 - Minifizierte UI-Component-JSON-Configs (haz.txt, cz.txt, dev.txt) pretty-printed und analysiert
 - Inhalte: Checkout-Steps, Zahlarten (PayPal, KDB-Debit, Madsack, Unzer)
+- Zahlart Datatrans: eigenes Modul [[mm-madsack-datatrans-payment]] (autoSettle=false, Buchung durch Verlagssystem)
 
 Siehe auch [[Entwicklungsumgebung]].

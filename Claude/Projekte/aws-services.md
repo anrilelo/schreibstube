@@ -39,7 +39,7 @@ aktualisiert: 2026-11-20
 
 ## Abhängigkeiten / Verknüpfungen
 - Betroffene Umgebungen (vom User am 2026-11-20 bestätigt): Madsack-M2 -> Cluster `mol-cluster-production` (betreibt u.a. den Service „Madsack-M2-Shop-Prod", Magento 2); DuMont -> Cluster `prod-shops` (Profil `dumont`, DuMont-Shops). Siehe [[Magento]]
-- Keine weiteren Projektnotizen verknüpft
+- Die ECS-Nodes und ihre Images werden von [[inf-udpm-icinga2-agent-docker]] überwacht (Trivy → Dependency-Track)
 
 ## Fallstricke
 - Der Mod parst die Textausgabe von `listServices()`. Ändert sich das Ausgabeformat, muss `parse()` in `.claude/skills/ecs-tasks/hooks/register.tsx` angepasst werden
