@@ -1,0 +1,18 @@
+---
+tags: [todo]
+aktualisiert: 2026-11-20
+---
+# Offene Punkte
+
+- [x] UI-Bug auf abo-dev.haz.de (Option „USB-Adapter“, gemeldet 2026-07-28) – am 2026-11-20 geprüft: nicht mehr reproduzierbar. Option heißt jetzt „USB-C Power Netzteil (20 W)“, Anhaken ohne Konsolenfehler, Preis einmalig 49,00 → 58,90 €, Artikel landet korrekt in der Kasse
+- [x] Team-Repo unter `~/git/` geklont, `bootstrap.sh` gelaufen (2026-11-20): Regeln unter `Globale Regeln/team/`, `@`-Imports in `~/.claude/CLAUDE.md`, `/sync-team-rules` installiert
+- [x] Alten Klon unter `~/Development/inf-udpm-team-claude-rules` entfernt (2026-11-20)
+- [x] `.idea/` aus `Globale Regeln/team/` entfernt
+- [x] Max-Plugin installiert (2026-11-20, `max@udpm` in settings.json aktiv); Praxistest bestanden: Hook sperrt Push, Max urteilt, Push mit `MAX_OK=1`
+- [x] `~/.claude/CLAUDE.md` und `settings.json` auf neuen Vault-Pfad umgestellt (2026-11-20)
+- [x] Alle Regel-Imports auf Symlinks unter `~/.claude/vault-rules/` umgestellt (2026-11-20) – Test bestanden, alle 5 geladen
+- [ ] ? klären, warum `@`-Imports mit Leerzeichen beim Kollegen (Linux) funktionieren, bei mir (macOS) nicht
+- [x] Agent Heinrich angelegt (`Agents/heinrich.md`, Symlink nach `~/.claude/agents/`), Test mit [[aws-services]] erfolgreich (2026-11-20)
+- [ ] Weitere Modulnotizen unter `Projekte/` anlegen (erste: [[aws-services]])
+- [ ] PR für `inf-udpm-team-claude-rules` per `/max:bcpr` erstellen (macOS-Prüfung + Erst-Sync-Fix, Änderungen liegen uncommitted im Klon); bis zum Merge kein `/sync-team-rules` (Skript verweigert bei unsauberem Klon)
+- [x] Symlinks für hildegard, oscar, otto nach `~/.claude/agents/` angelegt (2026-11-20) – alle Agents verfügbar, Oscar-Test erfolgreich (`/agents`-Befehl gibt es nicht mehr; prüfen per Frage „Welche Subagents stehen dir zur Verfügung?“)
