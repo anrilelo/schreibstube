@@ -32,6 +32,9 @@ aktualisiert: 2026-11-20
 
 ### UDPM-Imports aus `CLAUDE.md` entfernt (2026-11-20)
 - `~/.claude/CLAUDE.md` importiert jetzt `persoenliche-regeln.md` + `team-workflow.md` (Symlinks in `~/.claude/vault-rules/`); die UDPM-Imports `team-konventionen`, `bcpr-workflow`, `commit-pr-regeln`, `branch-strategie` sind raus, ersetzt durch den Hinweis „nur in `inf-udpm-*`-Repos `Globale Regeln/team/` lesen“
+- `~/.claude/vault-rules/team-workflow.md` → `Globale Regeln/Team-Workflow.md` angelegt (2026-11-20, geprüft). Die vier UDPM-Symlinks dort am 2026-11-20 entfernt; im Ordner liegen nur noch `persoenliche-regeln.md` und `team-workflow.md`
+- Test 2026-11-20 in neuer Sitzung bestanden: Claude Code nennt Branch `ABO-1234-<Ticket-Titel>` von aktuellem `main`, erster PR nach `staging`, dann nach Abnahme PR nach `main`, kein `feat/`, kein Co-Authored-By → [[Team-Workflow]] greift, UDPM-Regeln nicht mehr global
+- Hinweis auf UDPM-Repos steht außerhalb des Autogen-Blocks, der Block selbst bleibt leer stehen (Markierungen nicht löschen, sonst hängt `bootstrap.sh` evtl. einen zweiten Block an)
 - **Fallstrick:** Die UDPM-Imports standen im Block `# >>> inf-udpm-team-claude-rules (autogen) >>>`, den `bootstrap.sh` erzeugt → ein erneuter Lauf (evtl. auch `/sync-team-rules`) kann die Imports zurückbringen. Hinweis daher außerhalb des Blocks halten; ? prüfen, welches Skript den Block schreibt (`grep -n autogen bootstrap.sh scripts/sync.sh` im Klon); nach jedem Lauf `CLAUDE.md` kontrollieren
 
 ### Fallstricke unter macOS

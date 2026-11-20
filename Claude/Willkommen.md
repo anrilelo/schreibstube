@@ -8,6 +8,7 @@ Zentraler Vault als **Single Point of Truth** für Claude (Chat und Claude Code)
 
 ## Regeln
 - [[Persönliche-Regeln]] – Stil, Sprache, Dokumentationsregeln
+- [[martech-team-claude-rules]] – Team-Regeln martech (Repo, maßgeblich)
 - [[Team-Workflow]] – unser Ablauf: Jira-Ticket → Branch → PR `staging` → Abnahme → PR `main`
 - `Globale Regeln/team/` – Team-Regeln **UDPM**, gelten **nur in `inf-udpm-*`-Repos** (kommt per `bootstrap.sh` / `/sync-team-rules`, nicht manuell bearbeiten außer für Team-PRs)
 

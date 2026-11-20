@@ -4,7 +4,9 @@ aktualisiert: 2026-11-20
 ---
 # Team-Workflow (eigenes Team)
 
-Vom User beschrieben am 2026-11-20. Gilt für **unser** Team – **nicht** die UDPM-Regeln unter `Globale Regeln/team/` (die stammen aus dem Team-Repo eines Kollegen, `inf-udpm-team-claude-rules`, und gelten für uns nicht bzw. nur eingeschränkt; Umgang damit noch offen, siehe [[Offene Punkte]]).
+> **Maßgeblich ist künftig das Team-Repo [[martech-team-claude-rules]]** (`rules/team-workflow.md`, `rules/commits-prs.md`). Änderungen dort per PR; diese Notiz ist die persönliche Fassung.
+
+Vom User beschrieben am 2026-11-20. Gilt für **unser** Team in allen Repos außer `inf-udpm-*`. Die UDPM-Regeln unter `Globale Regeln/team/` (Team-Repo `inf-udpm-team-claude-rules`) gelten **nur in `inf-udpm-*`-Repos**; bei Widerspruch gewinnt außerhalb davon diese Notiz. Allgemeine Regeln (Secrets, Push-Check, Git-Vorsicht): [[Persönliche-Regeln]].
 
 ## Ablauf: vom Ticket bis `main`
 1. **Jira-Ticket** mit der Aufgabenbeschreibung kommt rein
@@ -17,6 +19,7 @@ Vom User beschrieben am 2026-11-20. Gilt für **unser** Team – **nicht** die U
 **`main` und `staging` immer nur per Pull Request** – nie direkt committen oder pushen (bestätigt 2026-11-20)
 
 ## Branch-Namen und Commit-Messages (bestätigt 2026-11-20)
+- Ticket-Titel per Atlassian-Connector aus Jira holen (in Claude Code integriert), nicht raten
 - Schema: **Jira-Ticket-ID + Ticket-Titel** – **keine** Conventional Commits (anders als UDPM)
 - Beispiele aus den Repos: Branch `ABO-1728-Critical-PHP`, `ABO-1739-Hildesheim-2.4.7-8.3`; Commit „ABO-739 Hildesheim PHP 8.3 mit magento 2.4.7“ (siehe [[shop-hildesheim-sub]], [[di-magento2]])
 - **Kein `Co-Authored-By`-Trailer, keine KI-Attribution** („Generated with Claude Code“ o. Ä.) in Commits und PRs – bleibt wie bisher (bestätigt 2026-11-20, deckt sich hier mit UDPM)
@@ -28,3 +31,5 @@ Vom User beschrieben am 2026-11-20. Gilt für **unser** Team – **nicht** die U
 - Review-Pflicht für PRs (wer gibt frei?), Merge-Art (Merge-Commit, Squash)
 
 Branch-Rollen (`main`, `staging`, `development`, `qa-prod`): [[Magento]]
+
+Anleitung für Kolleg:innen (Claude-Doc, teilbar): [Anleitung: Vom Jira-Ticket bis main](https://claude.ai/artifact/54NSfJWqPhSZB1E1mypRwU)
