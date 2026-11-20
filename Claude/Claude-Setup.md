@@ -23,11 +23,16 @@ aktualisiert: 2026-11-20
 - Der Claude-Chat (Desktop-App, Ordnerzugriff) nutzt weder `~/.claude/agents` noch `CLAUDE.md` – Agents gibt es nur in Claude Code
 
 ## Team-Regeln UDPM
+- **Gelten nur in `inf-udpm-*`-Repos** (Entscheidung 2026-11-20); unser Team arbeitet nach [[Team-Workflow]], Allgemeines (Secrets, Push-Check, Git-Vorsicht) steht in [[Persönliche-Regeln]]
 - Repo `RedaktionsNetzwerk-Deutschland/inf-udpm-team-claude-rules`, Klon unter `~/git/inf-udpm-team-claude-rules`
 - Enthält Konventionen, Workflow-Regeln, Plugin **max** (Pre-Push-Check per Hook, `/max:bcpr`), `bootstrap.sh`, `scripts/sync.sh`, `/sync-team-rules`
 - Sync legt Regeln unter `Claude/Globale Regeln/team/` ab; `TEAM_RULES_VAULT=/Users/rico/claude-obsidian/Claude` dauerhaft in `~/.zshrc`
-- Kernregeln: kein `Co-Authored-By`, keine KI-Attribution, Conventional Commits (Commits + Branches), Max vor jedem Push, Vault sofort pflegen
+- Kernregeln (UDPM): kein `Co-Authored-By`, keine KI-Attribution, Conventional Commits (Commits + Branches), Max vor jedem Push, Vault sofort pflegen
 - Persönliche Agents des Kollegen (Heinrich, Hildegard, Otto, Oscar) sind **nicht** im Team-Repo; am 2026-11-20 übernommen und angepasst (Pfade, Oscar ohne `find-project-note.sh`, Heinrich ohne Obsidian-MCP-Tools). Max nicht als eigener Agent, kommt aus dem Plugin. Definitionen in `Agents/`, Symlinks nach `~/.claude/agents/`
+
+### UDPM-Imports aus `CLAUDE.md` entfernt (2026-11-20)
+- `~/.claude/CLAUDE.md` importiert jetzt `persoenliche-regeln.md` + `team-workflow.md` (Symlinks in `~/.claude/vault-rules/`); die UDPM-Imports `team-konventionen`, `bcpr-workflow`, `commit-pr-regeln`, `branch-strategie` sind raus, ersetzt durch den Hinweis „nur in `inf-udpm-*`-Repos `Globale Regeln/team/` lesen“
+- **Fallstrick:** Die UDPM-Imports standen im Block `# >>> inf-udpm-team-claude-rules (autogen) >>>`, den `bootstrap.sh` erzeugt → ein erneuter Lauf (evtl. auch `/sync-team-rules`) kann die Imports zurückbringen. Hinweis daher außerhalb des Blocks halten; ? prüfen, welches Skript den Block schreibt (`grep -n autogen bootstrap.sh scripts/sync.sh` im Klon); nach jedem Lauf `CLAUDE.md` kontrollieren
 
 ### Fallstricke unter macOS
 - `sync.sh` braucht Bash 4+ (`mapfile`) und GNU find (`find -printf`) → `brew install bash findutils jq`, `gnubin` vor macOS-Tools in den PATH

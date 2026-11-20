@@ -4,7 +4,18 @@ aktualisiert: 2026-11-20
 ---
 # Persönliche Regeln
 
-Ergänzen die Team-Regeln unter `Globale Regeln/team/`, überschreiben sie aber nicht.
+## Geltungsbereich der Regeln (entschieden 2026-11-20)
+- **Unser Team:** [[Team-Workflow]] (Jira → Branch von `main` → PR `staging` → Abnahme → PR `main`; Ticket-ID + Titel statt Conventional Commits)
+- **UDPM-Regeln** unter `Globale Regeln/team/` gelten **nur bei Arbeit in `inf-udpm-*`-Repos** (bzw. Repos des UDPM-Teams). Dort haben sie Vorrang; überall sonst gelten sie nicht
+- Widersprechen sich beide außerhalb von UDPM-Repos, gewinnt [[Team-Workflow]]
+
+## Allgemeine Regeln (aus den UDPM-Regeln übernommen, gelten überall)
+- **Keine Secrets** (Tokens, Passwörter, API-Keys) in Vault, Commits, PRs oder Chat-Antworten; liegen welche im Repo: warnen, nur schematisch (`<PLACEHOLDER>`) dokumentieren
+- Kein `git add` von `.env`, `credentials.json`, `*.pem`, `*.key` ohne ausdrückliche Bestätigung
+- **Vor jedem `git push`** staged + ungepushte Commits auf Secrets, ungewollte Dateien und große Binaries prüfen (übernimmt Max)
+- **Keine zerstörenden Aktionen** (`push --force`, `reset --hard`, `rm -rf`, Branch löschen) ohne ausdrückliche Zustimmung
+- **Verifizieren statt annehmen:** Dateiinhalt/Repo-Stand vor Behauptungen prüfen; vor jedem Commit prüfen, ob der Branch zu einem schon gemergten PR gehört
+- Kein `Co-Authored-By`, keine KI-Attribution (siehe [[Team-Workflow]])
 
 ## Kommunikation
 - Antworten auf Deutsch
@@ -30,7 +41,7 @@ Definitionen liegen in `Agents/` im Vault, verlinkt nach `~/.claude/agents/`. In
 - **Oscar** (Haiku) – der Kofferträger. Proaktiv beim Einstieg in ein (ungewohntes) Repo: Kurzbrief aus Vault-Notiz + Repo-Stand.
 - **Otto** (Haiku) – der Bote. Stumpfe Web-Recherche (Doku, Changelogs, Fehlermeldungen). Kein Architektur-Rat.
 - **Philipp** (Haiku) – der Heizungsableser. Prüft per `bin/dev php-status` (Repo magento-dev) die PHP-Version aller Shop-/WordPress-/Basis-Images gegen php.net; meldet „Update fehlt", „EOL" und nicht prüfbare Images. Nur lesen. Läuft automatisch als geplante Aufgabe, siehe [[magento-dev]] / [[philipp]].
-- **Max** – kommt aus dem Team-Plugin `max@udpm`, Pflicht vor jedem `git push` und `gh pr create` (per Hook erzwungen).
+- **Max** – kommt aus dem Team-Plugin `max@udpm`, Pflicht vor jedem `git push` und `gh pr create` (per Hook erzwungen). Bleibt global als Secret-Check vor dem Push; ? prüfen, ob Max auch UDPM-Konventionen (Conventional Commits) anmahnt – das wäre außerhalb von UDPM-Repos falsch.
 
 ## repo_remote-Schlüssel
 origin-URL normalisieren: Protokoll und `.git` entfernen, `:` nach dem Host → `/`.

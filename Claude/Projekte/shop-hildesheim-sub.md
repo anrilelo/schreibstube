@@ -40,5 +40,6 @@ aktualisiert: 2026-11-20
 - `ca-prod` ist ein Tippfehler, gemeint ist `qa-prod` (vom User bestätigt, zieht sich durch alle Shop-Repos). TODO projektübergreifend: Umbenennung ca-prod → qa-prod in allen Shop-Repos, nicht terminiert, siehe [[Offene Punkte]]
 - Branch-Modell (`main` = produktiv, `staging` = testbare, von Fachabteilungen freizugebende Features): siehe [[Magento]], Abschnitt „Branch-Modell der Shop-/Magento-Repos"
 - `development` = frühe Entwicklungsphase, meist lokal getestet, kaum genutzt (siehe [[Magento]])
-- ? Rolle von `ca-prod` (qa-prod) im Modell sowie ob die Branches Deploy-Umgebungen spiegeln: vom User nicht erklärt
+- `ca-prod` (= `qa-prod`) = Abbild des zum Generierungszeitpunkt aktuellen produktiven Standes, dient dem Prüfen von Änderungen und der Risikobewertung für den Rollout (siehe [[Magento]])
+- Feature-Branches per PR nach `staging`, nach Abnahme nach `main` (siehe [[Team-Workflow]])
 - ? Rollout-Verlauf 2.4.7 / PHP 8.3 (Staging-/Prod-Termine, Probleme, Reste) noch nicht erfasst

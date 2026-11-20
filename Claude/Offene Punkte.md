@@ -28,4 +28,8 @@ aktualisiert: 2026-11-20
 - [x] Session-Import: mm-madsack-datatrans-payment erledigt (2026-11-20)
 - [x] Session-Import: inf-udpm-icinga2-agent-docker erledigt (2026-11-20)
 - [x] Session-Import: wp-abovorteil erledigt (2026-11-20)
-- [ ] Shop-Repos: Branch `ca-prod` heißt eigentlich `qa-prod` – Tippfehler, zieht sich durch alle Shop-Repos. Irgendwann umbenennen (ca-prod → qa-prod über alle Shop-Repos), nicht terminiert; welche Deploy-Pipelines auf den Branch zeigen, ist ungeprüft (? zu klären). Beispiel: [[shop-hildesheim-sub]]; ähnlicher Name `ca-prod24` in [[magento-dev]] (? gleicher Tippfehler, unbestätigt)
+- [ ] Shop-Repos: Branch `ca-prod` heißt eigentlich `qa-prod` – Tippfehler, zieht sich durch alle Shop-Repos. Irgendwann umbenennen (ca-prod → qa-prod über alle Shop-Repos), nicht terminiert; welche Deploy-Pipelines auf den Branch zeigen, ist ungeprüft (? zu klären). Beispiel: [[shop-hildesheim-sub]]; betrifft auch `ca-prod24` (= `qa-prod24`, bestätigt, siehe [[magento-dev]]); Rollen der Branches: [[Magento]]
+- [x] Umgang mit UDPM-Regeln entschieden (2026-11-20): Allgemeines in [[Persönliche-Regeln]] übernommen, UDPM-Regeln gelten nur in `inf-udpm-*`-Repos; eigene Regeln: [[Team-Workflow]]
+- [x] `~/.claude/CLAUDE.md` umgebaut (2026-11-20): UDPM-Imports raus, `team-workflow.md` importiert
+- [ ] ? Prüfen, ob `bootstrap.sh` / `/sync-team-rules` den Autogen-Block in `CLAUDE.md` neu schreibt und die UDPM-Imports zurückbringt (siehe [[Claude-Setup]])
+- [ ] ? Prüfen, ob Max außerhalb von UDPM-Repos Conventional Commits/BCPR anmahnt

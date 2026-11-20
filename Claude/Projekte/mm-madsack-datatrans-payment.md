@@ -14,7 +14,7 @@ aktualisiert: 2026-11-20
 
 ## Pfade
 - Repo lokal: `/Users/rico/Development/mm-madsack-datatrans-payment`
-- GitHub: `github.com/RedaktionsNetzwerk-Deutschland/mm-madsack-datatrans-payment` (Org RedaktionsNetzwerk-Deutschland); Team-Branch-Strategie Feature → `main` → `staging` → Prod
+- GitHub: `github.com/RedaktionsNetzwerk-Deutschland/mm-madsack-datatrans-payment` (Org RedaktionsNetzwerk-Deutschland); ~~Team-Branch-Strategie Feature → `main` → `staging` → Prod~~ – Konflikt mit [[Team-Workflow]] (2026-11-20): dort Feature → PR `staging` → Abnahme → PR `main`; ? für dieses Repo prüfen
 - Struktur: `Api`, `Controller`, `Helper` (`DatatransPayment.php`, `RegisterPayment.php`), `Model`, `Plugin`, `etc`, `view`, `i18n`
 
 ## Architektur

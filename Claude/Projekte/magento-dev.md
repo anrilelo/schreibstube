@@ -33,7 +33,7 @@ aktualisiert: 2026-11-20
 ## Rollout-Historie
 
 ### 2026-11-19 Madsack-Shop (Tag `production24`, PHP 8.2) – erledigt
-- Ausgerollt wurde der Stand von `ca-prod24`, Digest `sha256:4e7683039ec4…` (? vermutlich derselbe Tippfehler wie `ca-prod` statt `qa-prod`, nicht bestätigt; siehe TODO in [[Offene Punkte]] und [[shop-hildesheim-sub]])
+- Ausgerollt wurde der Stand von `ca-prod24`, Digest `sha256:4e7683039ec4…` (gemeint: `qa-prod24`, Tippfehler wie bei `ca-prod`, vom User bestätigt; Abbild des produktiven Standes, siehe [[Magento]], TODO in [[Offene Punkte]], Beispiel [[shop-hildesheim-sub]])
 - Vorgänger auf `production24`: `sha256:dbedc937cc13…` vom 12.11.
 - Vorab beide Images per `bin/dev madsack image-diff` verglichen, keine Blocker
 - Ergebnis laut Enrico am 2026-11-20: alles gut, keine Probleme

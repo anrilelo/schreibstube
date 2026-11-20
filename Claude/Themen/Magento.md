@@ -20,10 +20,11 @@ Vom User bestätigt (2026-11-20): In (fast) allen Repos (Shop-Repos, Magento) gi
 - `staging` = neue Features, die schon getestet werden können und von den Fachabteilungen freigegeben werden
 - Sind Features freigegeben, kommt der entsprechende (Feature-)Branch in `main` und geht mit dem nächsten Rollout produktiv
 - `development` = neue Features in der ersten Entwicklungsphase, die meist lokal getestet werden können; wird in der Praxis kaum genutzt (Erfahrung aus der Vergangenheit)
-- ? zu klären: Rolle von `ca-prod` (= `qa-prod`, Tippfehler, siehe [[Offene Punkte]]) im Modell
-- ? zu klären: ob `ca-prod24` in [[magento-dev]] derselbe Tippfehler ist (Vermutung, unbestätigt)
-- ? zu klären: ob Feature-Branches zum Testen in `staging` gemergt werden
+- `qa-prod` (im Repo als `ca-prod` geschrieben, Tippfehler, siehe [[Offene Punkte]]) = Abbild des zum Generierungszeitpunkt aktuellen produktiven Standes; damit werden Änderungen gegen den aktuellen produktiven Stand geprüft und Risiken für den Rollout bewertet
+- `qa-prod24` hat dieselbe Bedeutung (in [[magento-dev]] als `ca-prod24`, derselbe Tippfehler, bestätigt); Branches mit Suffix „24“ sind mit dem Umstieg auf Magento 2.4 entstanden
+- Nicht dokumentiert: wie und wann `qa-prod` generiert wird (vom User nicht gesagt)
+- Feature-Branches gehen per PR nach `staging`, nach Abnahme per PR nach `main` (bestätigt 2026-11-20, siehe [[Team-Workflow]])
 - Beispiel: [[shop-hildesheim-sub]] (dort liegen `development`, `staging`, `ca-prod` als Remote-Branches)
-- Verhältnis zu [[Branch-Strategie]] / [[BCPR-Workflow]] (Feature-Branch von `main`, PR-Base `main`): kein Widerspruch festgestellt, das Modell ergänzt nur, wofür `staging` dient
+- ~~Verhältnis zu [[Branch-Strategie]] / [[BCPR-Workflow]] (Feature-Branch von `main`, PR-Base `main`): kein Widerspruch festgestellt, das Modell ergänzt nur, wofür `staging` dient~~ – überholt (2026-11-20): Das sind UDPM-Regeln, unser Ablauf steht in [[Team-Workflow]]
 
 Siehe auch [[Entwicklungsumgebung]].
