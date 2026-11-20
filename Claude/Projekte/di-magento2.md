@@ -29,7 +29,7 @@ aktualisiert: 2026-11-20
 
 ## Abhängigkeiten / Verknüpfungen
 - Base-Image `thecustomsolutions/php-fpm:<php>` kommt aus [[di-php]] (dort u.a. redis-Extension)
-- Alle Shop-Images (`shop-m2-madsack`, `shop-mediengruppe-bayern`, `shop-hildesheim-sub`, `shop-rnz`, `shop-ovb-abo`, `shop-dumont-v2`, `shop-m2-cz`, `shop-heilbronner-stimme`, …) bauen auf dem hier erzeugten Magento-Image auf
+- Alle Shop-Images (`shop-m2-madsack`, `shop-mediengruppe-bayern`, `shop-hildesheim-sub` ([[shop-hildesheim-sub]]), `shop-rnz`, `shop-ovb-abo`, `shop-dumont-v2`, `shop-m2-cz`, `shop-heilbronner-stimme`, …) bauen auf dem hier erzeugten Magento-Image auf
 - [[aws-services]] prüft, welche ECR-Images/Tasks mit welcher PHP-Version laufen
 - `ecom-middleware` und die WordPress-Images sind eigene Repos (PHP 8.5 bzw. Apache/mod_php), nicht von di-magento2 abgeleitet
 - [[Server und Sicherheit]], [[Magento]]

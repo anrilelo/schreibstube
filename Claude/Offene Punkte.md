@@ -28,3 +28,4 @@ aktualisiert: 2026-11-20
 - [x] Session-Import: mm-madsack-datatrans-payment erledigt (2026-11-20)
 - [x] Session-Import: inf-udpm-icinga2-agent-docker erledigt (2026-11-20)
 - [x] Session-Import: wp-abovorteil erledigt (2026-11-20)
+- [ ] Shop-Repos: Branch `ca-prod` heißt eigentlich `qa-prod` – Tippfehler, zieht sich durch alle Shop-Repos. Irgendwann umbenennen (ca-prod → qa-prod über alle Shop-Repos), nicht terminiert; welche Deploy-Pipelines auf den Branch zeigen, ist ungeprüft (? zu klären). Beispiel: [[shop-hildesheim-sub]]; ähnlicher Name `ca-prod24` in [[magento-dev]] (? gleicher Tippfehler, unbestätigt)

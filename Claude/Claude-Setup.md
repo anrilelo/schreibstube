@@ -18,6 +18,9 @@ aktualisiert: 2026-11-20
 - Stolperstein: `permissions`-Block mit zusätzlichen `{}` eingefügt → ungültiges JSON. Prüfen mit `python3 -m json.tool ~/.claude/settings.json`
 - Plugins: phpstorm-plugin, max@udpm (Team, Pre-Push-Check), eigener Marketplace `magento-dev` (`/Users/rico/Development/magento-dev`): shop-status, folge-schritt, lange-laeufe, fix-status
 - Verlauf wird per `cleanupPeriodDays` aufgeräumt – Vault-Dateien bleiben davon unberührt
+- CLI im PHPStorm-Terminal nutzt dasselbe Setup wie die Desktop-App (alles aus `~/.claude/` bzw. `~/.claude.json`, MCP user-scope). Test 2026-11-20 in `shop-hildesheim-sub` ([[shop-hildesheim-sub]]): alle Agents + Max verfügbar, alle 5 Imports aus `~/.claude/vault-rules/` geladen. `/mcp`: `obsidian` (20 Tools) und `phpstorm` (98 Tools) als User-MCPs verbunden, dazu die claude.ai-Connectoren (z. B. Atlassian). Projekt-`CLAUDE.md`/`.claude/` im Repo kommt ggf. zusätzlich dazu
+- Im Test zusätzlich Agent **Philipp** (Haiku, „Heizungsableser“, prüft PHP-Versionen der Images per `bin/dev php-status`) gelistet – eigener Vault-Agent: `Agents/philipp.md`, Symlink in `~/.claude/agents/` (geprüft 2026-11-20). Damit 5 Vault-Agents: Heinrich, Hildegard, Oscar, Otto, Philipp
+- Der Claude-Chat (Desktop-App, Ordnerzugriff) nutzt weder `~/.claude/agents` noch `CLAUDE.md` – Agents gibt es nur in Claude Code
 
 ## Team-Regeln UDPM
 - Repo `RedaktionsNetzwerk-Deutschland/inf-udpm-team-claude-rules`, Klon unter `~/git/inf-udpm-team-claude-rules`

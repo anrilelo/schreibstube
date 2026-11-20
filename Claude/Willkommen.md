@@ -26,7 +26,7 @@ Projektnotizen liegen unter `Projekte/`, Zuordnung zum Repo über `repo_remote` 
 - [[mm-madsack-datatrans-payment]] – Magento-Zahlungsmodul für Datatrans (Reservierung, autoSettle=false)
 - [[inf-udpm-icinga2-agent-docker]] – Icinga2-Monitoring-Agent (Docker), Trivy→Dependency-Track-Feeder
 - [[wp-abovorteil]] – WordPress-Abovorteil-Portal (3 Sites), bin/dev-Dev-Umgebung, PHP 8.3
-
+- [[shop-hildesheim-sub]] – Magento-2-Shop Hildesheim (HIAZ), Migration auf 2.4.7 / PHP 8.3 (ABO-739)
 - [[magento-dev]] – lokale Magento-Dev-Umgebung (`bin/dev`), Rollout-Historie Madsack production24
 
 ## Themen
