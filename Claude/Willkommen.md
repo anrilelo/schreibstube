@@ -25,6 +25,7 @@ Projektnotizen liegen unter `Projekte/`, Zuordnung zum Repo über `repo_remote` 
 - [[di-php]] – eigenes PHP-Base-Image (thecustomsolutions/php-fpm) je PHP-Version, Base für di-magento2
 - [[mm-madsack-datatrans-payment]] – Magento-Zahlungsmodul für Datatrans (Reservierung, autoSettle=false)
 - [[inf-udpm-icinga2-agent-docker]] – Icinga2-Monitoring-Agent (Docker), Trivy→Dependency-Track-Feeder
+- [[wp-abovorteil]] – WordPress-Abovorteil-Portal (3 Sites), bin/dev-Dev-Umgebung, PHP 8.3
 
 - [[magento-dev]] – lokale Magento-Dev-Umgebung (`bin/dev`), Rollout-Historie Madsack production24
 

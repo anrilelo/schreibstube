@@ -2,7 +2,12 @@
 repo_remote: github.com/RedaktionsNetzwerk-Deutschland/ecom-middleware
 shops: []
 shopsystem: shopify
-tags: [projekt, middleware, symfony, docker, php]
+tags:
+  - projekt
+  - middleware
+  - symfony
+  - docker
+  - php
 aktualisiert: 2026-11-20
 ---
 # ecom-middleware
@@ -41,6 +46,11 @@ aktualisiert: 2026-11-20
 - FPM-Pool: dieselben drei Werte zusätzlich als `php_admin_flag` (PR `ABO-1728-PHP2Shell-php-admin-flag`, Commit 910b74a, gemergt)
 - nginx: `if ($http_content_type ~* "multipart") { return 403; }` in `001_default.conf`
 - Staging/Prod laufen seit 21.10. auf gepatchtem PHP 8.5.12
+
+## Verlauf: composer audit / Dependency-Security-Fixes
+- Neben `main` gibt es einen Branch `staging`. Dependency-/Security-Fixes gehen per PR vom selben Branch **sowohl nach `staging` als auch nach `main`** (zwei PRs). `composer audit` läuft seit ABO-1675 in der CI und bricht den Build bei neuen Advisories
+- Früheres gleichartiges Muster: ABO-1781 (composer audit: Symfony 7.4.23, phpunit 13.4.6, PR #132)
+- **2026-11-19 – easycorp/easyadmin-bundle 5.6.1 → 5.10.2:** Am 17.11.2026 erschienen 12 neue Advisories für easyadmin-bundle < 5.10.2 (u.a. `access_control`-Umgehung über `routeName`, Stored XSS, Rechte-Umgehung über `setPermissions()`), dadurch scheiterte `composer audit` im Build. Fix: Commit 60cc5e6 „composer audit: easycorp/easyadmin-bundle 5.10.2“ auf Branch `Update-Easyadmin-Bundle`, nur EasyAdmin in `composer/composer.lock` aktualisiert, keine weiteren Pakete. Gemergt als PR #137 → `staging` (2026-11-19 16:08 UTC) und PR #138 → `main` (16:17 UTC). Der Branch ist erledigt (nicht weiter darauf committen, lokal beim nächsten Touch aufräumen)
 
 ## Offene Punkte
 - **?** nginx-Multipart-Sperre: Code-Kommentar sagt „Remove once the image runs a patched PHP". PHP läuft inzwischen auf 8.5.12, die Sperre steht aber noch — entfernen oder bewusst als Defense-in-Depth behalten?

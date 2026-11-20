@@ -27,3 +27,4 @@ aktualisiert: 2026-11-20
 - [ ] ? di-php: GitHub-Default-Branch auf main umstellen, sonst läuft der Nightly-Rebuild (nightly.yml) nicht (siehe [[di-php]])
 - [x] Session-Import: mm-madsack-datatrans-payment erledigt (2026-11-20)
 - [x] Session-Import: inf-udpm-icinga2-agent-docker erledigt (2026-11-20)
+- [x] Session-Import: wp-abovorteil erledigt (2026-11-20)
