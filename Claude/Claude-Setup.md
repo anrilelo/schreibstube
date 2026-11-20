@@ -55,3 +55,12 @@ aktualisiert: 2026-11-20
 - `.gitignore`: `.DS_Store`, `.trash/`, `.obsidian/workspace*.json`, `Claude/Globale Regeln/team/` (Team-Regeln sind im Team-Repo versioniert)
 - Mitgesichert über Symlinks: `CLAUDE.md`, Agents; **nicht** gesichert: `~/.claude/settings.json`, die Symlinks selbst (`~/.claude/vault-rules/`, `~/.claude/agents/`)
 - Sichern: manuell `git add -A && git commit -m "docs: Vault-Stand" && git push` oder Obsidian-Plugin „Obsidian Git“
+
+## Obsidian-MCP (seit 2026-11-20)
+- Plugin „Local REST API with MCP“ (coddingtonbear) mit eingebautem MCP-Server – keine separate Brücke wie beim Kollegen
+- In Claude Code global (`--scope user`) als Server `obsidian` eingetragen: **`http://127.0.0.1:27123/mcp/`** (HTTP-Server im Plugin aktiviert), API-Key als Bearer-Header in `~/.claude.json` (Key nie in den Vault!). Verbunden seit 2026-11-20
+- Nur verfügbar, solange Obsidian läuft → Heinrich arbeitet weiter dateibasiert, MCP ist optional
+- HTTPS (Port 27124) scheitert: Claude Code lehnt das selbst erzeugte Plugin-Zertifikat ab (`UNSUPPORTED_CONSTRAINT_TYPE: unsupported name constraint type`) → deshalb HTTP, unbedenklich da nur lokal
+- MCP-Tools (20): u. a. `vault_read`, `vault_get_document_map`, `vault_patch` (Abschnitt/Block/Frontmatter, mit `ifMatch`), `vault_append`, `search_simple`, `search_query` (JsonLogic über Frontmatter/Tags/Pfad), `tag_list`, `vault_move` (passt Links an), `command_execute`
+- **Pfade im MCP relativ zu `/Users/rico/claude-obsidian/`** → beginnen mit genau einem `Claude/` (anders als beim Kollegen, dessen Vault-Root `Claude/` selbst ist)
+- Heinrich und Hildegard nutzen den MCP seit 2026-11-20 optional (Heinrich: lesen, patch, append, Suche; Hildegard: nur lesend); Fallback auf Dateizugriff, wenn Obsidian geschlossen

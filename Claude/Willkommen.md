@@ -28,3 +28,10 @@ Projektnotizen liegen unter `Projekte/`, Zuordnung zum Repo über `repo_remote` 
 
 ## Offen
 - [[Offene Punkte]]
+
+
+```dataview
+TABLE shopsystem, shops, aktualisiert
+FROM "Claude/Projekte"
+SORT aktualisiert DESC
+```

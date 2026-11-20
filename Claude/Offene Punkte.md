@@ -14,5 +14,5 @@ aktualisiert: 2026-11-20
 - [ ] ? klären, warum `@`-Imports mit Leerzeichen beim Kollegen (Linux) funktionieren, bei mir (macOS) nicht
 - [x] Agent Heinrich angelegt (`Agents/heinrich.md`, Symlink nach `~/.claude/agents/`), Test mit [[aws-services]] erfolgreich (2026-11-20)
 - [ ] Weitere Modulnotizen unter `Projekte/` anlegen (erste: [[aws-services]])
-- [ ] PR für `inf-udpm-team-claude-rules` per `/max:bcpr` erstellen (macOS-Prüfung + Erst-Sync-Fix, Änderungen liegen uncommitted im Klon); bis zum Merge kein `/sync-team-rules` (Skript verweigert bei unsauberem Klon)
+- [x] PR für `inf-udpm-team-claude-rules` erstellt (2026-11-20): macOS-Prüfung + Erst-Sync-Fix. Nach dem Merge: im Klon `main` auschecken + pullen, dann `/sync-team-rules`
 - [x] Symlinks für hildegard, oscar, otto nach `~/.claude/agents/` angelegt (2026-11-20) – alle Agents verfügbar, Oscar-Test erfolgreich (`/agents`-Befehl gibt es nicht mehr; prüfen per Frage „Welche Subagents stehen dir zur Verfügung?“)
