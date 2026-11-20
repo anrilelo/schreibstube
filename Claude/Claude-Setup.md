@@ -49,3 +49,9 @@ aktualisiert: 2026-11-20
 - Beim Kollegen (Linux) funktionieren die Imports mit Leerzeichen laut seiner Aussage → Ursache evtl. abhängig von OS (macOS) oder Client (Desktop-App vs. CLI) bzw. Version; ? zu klären
 - Test 2026-11-20 nach Umstellung: alle 5 Imports geladen. Per `[[Wikilink]]` verlinkte Notizen werden **nicht** mitgeladen, sondern bei Bedarf gelesen (gewollt)
 - Team-Regeln verweisen auf `[[Superpowers Execution-Strategie]]` – existiert in diesem Vault nicht (Notiz des Kollegen)
+
+## Backup per Git (seit 2026-11-20)
+- Vault `~/claude-obsidian` ist Git-Repo „schreibstube“, privat: `https://github.com/anrilelo/schreibstube` (HTTPS über `gh auth setup-git`; SSH-Key passt nicht zum Account `anrilelo`)
+- `.gitignore`: `.DS_Store`, `.trash/`, `.obsidian/workspace*.json`, `Claude/Globale Regeln/team/` (Team-Regeln sind im Team-Repo versioniert)
+- Mitgesichert über Symlinks: `CLAUDE.md`, Agents; **nicht** gesichert: `~/.claude/settings.json`, die Symlinks selbst (`~/.claude/vault-rules/`, `~/.claude/agents/`)
+- Sichern: manuell `git add -A && git commit -m "docs: Vault-Stand" && git push` oder Obsidian-Plugin „Obsidian Git“
