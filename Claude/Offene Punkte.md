@@ -18,3 +18,6 @@ aktualisiert: 2026-11-20
 - [x] Symlinks für hildegard, oscar, otto nach `~/.claude/agents/` angelegt (2026-11-20) – alle Agents verfügbar, Oscar-Test erfolgreich (`/agents`-Befehl gibt es nicht mehr; prüfen per Frage „Welche Subagents stehen dir zur Verfügung?“)
 - [x] Session-Import: di-magento2 erledigt (2026-11-20)
 - [ ] ? di-magento2: PHP2Shell-Stopgap-Härtung in der 8.3-Linie übernehmen oder bewusst weglassen? (siehe [[di-magento2]])
+- [x] Session-Import: docker-middleware (ecom-middleware) erledigt (2026-11-20)
+- [ ] ? ecom-middleware: nginx-Multipart-Sperre nach PHP-Patch (8.5.12) entfernen oder als Defense-in-Depth behalten? (siehe [[ecom-middleware]])
+- [ ] ecom-middleware: AWS-WAF-Managed-Rules für CloudFront prüfen (ABO-1675, siehe [[ecom-middleware]])

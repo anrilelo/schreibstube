@@ -48,4 +48,4 @@ aktualisiert: 2026-11-20
 
 ## Offene Punkte
 - **?** PHP2Shell-Stopgap-Härtung in der 8.3-Linie bewusst nicht übernommen oder nachzuziehen?
-- `ecom-middleware`: php_admin_flag-PR (`ABO-1728-PHP2Shell-php-admin-flag`, Commit 910b74a) — eigene Projektnotiz beim Import der ecom-middleware-Sessions anlegen
+- ecom-middleware: php_admin_flag-PR (ABO-1728-PHP2Shell-php-admin-flag, 910b74a) gemergt; eigene Notiz: [[ecom-middleware]]
