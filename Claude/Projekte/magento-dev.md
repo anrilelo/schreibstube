@@ -24,6 +24,12 @@ aktualisiert: 2026-11-20
 - Tool-Plugins im eigenen Marketplace `magento-dev`, siehe [[Claude-Setup]]
 - Verwandt: [[aws-services]] (zeigt, welche Images/PHP-Versionen auf den ECS-Clustern laufen), [[Magento]]
 
+## PHP-Stand-Prüfung (Philipp)
+- Agent [[philipp]] (Haiku, Tools Bash/Read) ruft `bin/dev php-status` auf (Skript `tools/php-status.py`, App-Liste `php-apps.conf`) und prüft die PHP-Version aller Shop-, WordPress- und Basis-Images gegen php.net. Meldet „Update fehlt", „EOL" und nicht prüfbare Images (z. B. fehlendes docker login). Nur lesen, kein eigener Nachrichtenversand.
+- Automatik: geplante Aufgabe der Claude-Desktop-App `php-stand-pruefen` („PHP-Stand prüfen (Philipp)"), werktags zweimal täglich gegen 08:30 und 14:30 Uhr (cron `30 8,14 * * 1-5`; vom User bestätigt: „1–2 am Tag reicht"; der zweite Lauf erwischt PHP-Releases, die über Tag erscheinen, die Images werden nachts neu gebaut, häufiger prüfen bringt nichts), Auto-Modus, Datei `~/.claude/scheduled-tasks/php-stand-pruefen/SKILL.md`. Bei OK keine Benachrichtigung, bei veraltetem PHP oder nicht prüfbaren Images Desktop-/Push-Benachrichtigung (PushNotification). Läuft nur bei geöffneter App (sonst Nachholen beim nächsten Start).
+- Kein Slack-Versand durch die Aufgabe; dafür manuell `bin/dev php-status --slack`.
+- Fallstrick: neue Agenten in `~/.claude/agents` werden erst in neuen Sitzungen geladen.
+
 ## Rollout-Historie
 
 ### 2026-11-19 Madsack-Shop (Tag `production24`, PHP 8.2) – erledigt

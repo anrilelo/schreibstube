@@ -14,7 +14,7 @@ Zentraler Vault als **Single Point of Truth** für Claude (Chat und Claude Code)
 - [[Profil]]
 - [[Entwicklungsumgebung]]
 - [[Claude-Setup]]
-- Agents: [[heinrich|Heinrich]] (Chronist), [[hildegard|Hildegard]] (Archivarin), [[oscar|Oscar]] (Projekt-Brief), [[otto|Otto]] (Web-Recherche)
+- Agents: [[heinrich|Heinrich]] (Chronist), [[hildegard|Hildegard]] (Archivarin), [[oscar|Oscar]] (Projekt-Brief), [[otto|Otto]] (Web-Recherche), [[philipp|Philipp]] (PHP-Stand-Prüfung)
 
 ## Projekte
 Projektnotizen liegen unter `Projekte/`, Zuordnung zum Repo über `repo_remote` im Frontmatter. Vorlage: [[Vorlage Projekt]].

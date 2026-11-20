@@ -29,6 +29,7 @@ Definitionen liegen in `Agents/` im Vault, verlinkt nach `~/.claude/agents/`. In
 - **Hildegard** (Haiku) – die Archivarin. Durchsucht den Vault bei projektübergreifenden Fragen („was weiß ich über X", „welche Module hängen mit Y zusammen").
 - **Oscar** (Haiku) – der Kofferträger. Proaktiv beim Einstieg in ein (ungewohntes) Repo: Kurzbrief aus Vault-Notiz + Repo-Stand.
 - **Otto** (Haiku) – der Bote. Stumpfe Web-Recherche (Doku, Changelogs, Fehlermeldungen). Kein Architektur-Rat.
+- **Philipp** (Haiku) – der Heizungsableser. Prüft per `bin/dev php-status` (Repo magento-dev) die PHP-Version aller Shop-/WordPress-/Basis-Images gegen php.net; meldet „Update fehlt", „EOL" und nicht prüfbare Images. Nur lesen. Läuft automatisch als geplante Aufgabe, siehe [[magento-dev]] / [[philipp]].
 - **Max** – kommt aus dem Team-Plugin `max@udpm`, Pflicht vor jedem `git push` und `gh pr create` (per Hook erzwungen).
 
 ## repo_remote-Schlüssel
