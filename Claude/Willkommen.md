@@ -19,6 +19,7 @@ Zentraler Vault als **Single Point of Truth** für Claude (Chat und Claude Code)
 ## Projekte
 Projektnotizen liegen unter `Projekte/`, Zuordnung zum Repo über `repo_remote` im Frontmatter. Vorlage: [[Vorlage Projekt]].
 - [[aws-services]] – ECS-Tasks und PHP-Versionen der laufenden Images (mol-cluster-production, prod-shops)
+- [[di-magento2]] – Magento-2.4.7-Base-Image für alle Shops (Docker, PHP 8.2/8.3)
 
 - [[magento-dev]] – lokale Magento-Dev-Umgebung (`bin/dev`), Rollout-Historie Madsack production24
 

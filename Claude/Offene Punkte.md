@@ -16,3 +16,5 @@ aktualisiert: 2026-11-20
 - [ ] Weitere Modulnotizen unter `Projekte/` anlegen (erste: [[aws-services]])
 - [x] PR für `inf-udpm-team-claude-rules` erstellt (2026-11-20): macOS-Prüfung + Erst-Sync-Fix. Nach dem Merge: im Klon `main` auschecken + pullen, dann `/sync-team-rules`
 - [x] Symlinks für hildegard, oscar, otto nach `~/.claude/agents/` angelegt (2026-11-20) – alle Agents verfügbar, Oscar-Test erfolgreich (`/agents`-Befehl gibt es nicht mehr; prüfen per Frage „Welche Subagents stehen dir zur Verfügung?“)
+- [x] Session-Import: di-magento2 erledigt (2026-11-20)
+- [ ] ? di-magento2: PHP2Shell-Stopgap-Härtung in der 8.3-Linie übernehmen oder bewusst weglassen? (siehe [[di-magento2]])

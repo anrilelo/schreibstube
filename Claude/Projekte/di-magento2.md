@@ -1,0 +1,51 @@
+---
+repo_remote: github.com/RedaktionsNetzwerk-Deutschland/di-magento2
+shops: []
+shopsystem: magento2
+tags: [projekt, docker, base-image, php]
+aktualisiert: 2026-11-20
+---
+# di-magento2
+
+## Zweck
+- Baut das Magento-2.4.7-Base-Image, auf dem alle Shop-Images der Gruppe aufsetzen
+- Ergebnis: `thecustomsolutions/magento2:2.4.7-p10-82` (8.2-Linie) bzw. 8.3-Linie; die Shop-Repos bauen darauf ihr eigenes `thecustomsolutions/shop-*`-Image
+
+## Pfade
+- Repo lokal: `/Users/rico/Development/di-magento2`
+- GitHub: `github.com/RedaktionsNetzwerk-Deutschland/di-magento2` (Org RedaktionsNetzwerk-Deutschland)
+
+## Architektur
+- Dockerfile baut von `FROM thecustomsolutions/php-fpm:<php>` (Base-Image aus separatem Repo); installiert nginx + Build-Tools, Composer 2.6.6, n98-magerun2, cron
+- Magento-Quellen per `COPY magento2 /var/www`, danach monatliche Security-Patches aus `/m2-patches/*.patch` (`247p10-2026-<MM>-001-CE.patch`) + `calendar_icu.patch`, `fix_addcomment.patch`, `category_tree_lazyload.patch`
+- PHP-Config: `.docker/php/php.ini` → `conf.d/99-settings.ini` (memory_limit 2560M [ABO-1589], upload/post 20M, `expose_php Off`, `cgi.fix_pathinfo 0`); `.docker/php/php.conf` → FPM-Pool `www.conf` (Pool `[www]`, `pm=ondemand`, listen 127.0.0.1:9000)
+- Sessions in Redis (laut Entrypoint)
+- `category_tree_lazyload.patch`: Admin-Kategoriebaum lädt Unterkategorien erst bei Bedarf (wie 2.4.8) gegen „Redis session exceeded concurrent connections" (magento2#38851); beim Update auf 2.4.8 entfernen
+- Branch-/Build-Modell: pro Magento-Version + PHP-Variante ein Build-Branch; der Workflow `.github/workflows/docker-image.yml` baut bei Push/PR auf den Branch der jeweiligen Linie:
+  - `magento-2.4.7-p10` → PHP 8.3 (aktuelle Haupt-Linie, Stand 2026-11)
+  - `magento-2.4.7-p10-82` → PHP 8.2
+  - monatliche Patch-Branches `ABO-xxxx-Patch-2.4.7-p10-<Monat>-2026[-83]`
+- Prod: Images werden nach AWS ECR gespiegelt (Account 981570960232, eu-central-1) und auf ECS betrieben. Docker-Hub-Tag ≠ ECR-Kopie ≠ laufende Task — Rollout über [[aws-services]] bzw. `php -v` im laufenden Container verifizieren (aus Session 2026-10-21)
+
+## Abhängigkeiten / Verknüpfungen
+- Base-Image `thecustomsolutions/php-fpm:<php>` aus separatem Repo (dort u.a. redis-Extension)
+- Alle Shop-Images (`shop-m2-madsack`, `shop-mediengruppe-bayern`, `shop-hildesheim-sub`, `shop-rnz`, `shop-ovb-abo`, `shop-dumont-v2`, `shop-m2-cz`, `shop-heilbronner-stimme`, …) bauen auf dem hier erzeugten Magento-Image auf
+- [[aws-services]] prüft, welche ECR-Images/Tasks mit welcher PHP-Version laufen
+- `ecom-middleware` und die WordPress-Images sind eigene Repos (PHP 8.5 bzw. Apache/mod_php), nicht von di-magento2 abgeleitet
+- [[Server und Sicherheit]], [[Magento]]
+
+## Fallstricke
+- Build nur `linux/amd64`; auf Apple Silicon emuliert und langsam. Häufiger Abbruch ist nicht das Dockerfile, sondern die volle Docker-VM (`E: You don't have enough free space in /var/cache/apt/archives/`) → `docker builder prune` / `docker image prune -a` (aus Session 2026-10-21)
+- redis-Extension kam früher per `pecl install redis`; PECL liefert bei weltweiten Massen-Rebuilds zeitweise HTTP 500. Robuster: phpredis-Tarball von GitHub + `docker-php-ext-install redis`. Gilt fürs php-fpm-Base-Image; im aktuellen di-magento2-Dockerfile keine eigene redis-Zeile (aus Session 2026-10-21)
+- Nach PHP-Neubau `docker build --pull`, sonst nimmt Docker das alte Base-Image aus dem Cache
+- IAM-User `S3CfLogs` darf kein `ecr:DescribeImages`; ECS Exec nicht aktiviert → Remote-Abfrage der laufenden PHP-Version eingeschränkt (Weg: siehe [[aws-services]])
+
+## Sicherheit: PHP2Shell / ABO-1728 (21.10.2026)
+- CVE-2026-109618 / -109619 (Sansec „php2shell"), kritische RCE über PHP-Memory/Upload-Progress. Eigentlicher Fix = PHP-Update; erste gepatchte Releases 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12
+- Stopgap-Härtung: php.ini `session.upload_progress.enabled = 0`, `session.use_strict_mode = 1`; zusätzlich als `php_admin_flag` im FPM-Pool, damit nicht per `ini_set()` reaktivierbar
+- Liegt auf Branch `ABO-1728-Critical-PHP` (Commit e0bd8b6) / 8.2-Linie. **?** Im aktuellen Haupt-Branch `magento-2.4.7-p10` (8.3) nicht in php.ini/php.conf — unklar, ob bewusst weggelassen (8.3.x ohnehin gepatcht) oder nachzuziehen
+- Alle produktiven Shop-Images am 21.10. neu gebaut und am laufenden Container (u.a. Madsack-Prod) als 8.2.35 verifiziert
+
+## Offene Punkte
+- **?** PHP2Shell-Stopgap-Härtung in der 8.3-Linie bewusst nicht übernommen oder nachzuziehen?
+- `ecom-middleware`: php_admin_flag-PR (`ABO-1728-PHP2Shell-php-admin-flag`, Commit 910b74a) — eigene Projektnotiz beim Import der ecom-middleware-Sessions anlegen
