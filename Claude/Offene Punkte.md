@@ -34,4 +34,4 @@ aktualisiert: 2026-11-20
 - [ ] ? Prüfen, ob `bootstrap.sh` / `/sync-team-rules` den Autogen-Block in `CLAUDE.md` neu schreibt und die UDPM-Imports zurückbringt (siehe [[Claude-Setup]])
 - [ ] ? Prüfen, ob Max außerhalb von UDPM-Repos Conventional Commits/BCPR anmahnt
 - [x] Team-Regeln-Repo martech angelegt (2026-11-20): [[martech-team-claude-rules]], Grundgerüst lokal geschrieben
-- [ ] martech-team-claude-rules: erster Commit + Push, danach eigenen `~/.claude/CLAUDE.md`-Import auf das Repo umstellen, Kollegen einrichten lassen (README)
+- [ ] martech-team-claude-rules: Grundgerüst gepusht (e2e0fb8); noch offen: eigenen `~/.claude/CLAUDE.md`-Import auf das Repo umstellen, Kollegen einrichten lassen (README)
