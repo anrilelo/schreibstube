@@ -8,6 +8,7 @@ aktualisiert: 2026-11-20
 # aws-services
 
 ## Zweck
+- **Repo-Art Tool** (nur `main`, PR nach `main`); wird umbenannt in `martech-team-tool-aws-services` (entschieden 2026-11-21, noch nicht umgesetzt)
 - Zeigt, welche Tasks auf welchen EC2-Instanzen der ECS-Cluster laufen und mit welcher PHP-Version ihr Image gebaut ist
 - Ausgabe als Terminal-Text oder als Panel in Claude Code
 - Rein lesend, ändert nichts in AWS

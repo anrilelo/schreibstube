@@ -30,6 +30,9 @@ aktualisiert: 2026-11-20
 - Kernregeln (UDPM): kein `Co-Authored-By`, keine KI-Attribution, Conventional Commits (Commits + Branches), Max vor jedem Push, Vault sofort pflegen
 - Persönliche Agents des Kollegen (Heinrich, Hildegard, Otto, Oscar) sind **nicht** im Team-Repo; am 2026-11-20 übernommen und angepasst (Pfade, Oscar ohne `find-project-note.sh`, Heinrich ohne Obsidian-MCP-Tools). Max nicht als eigener Agent, kommt aus dem Plugin. Definitionen in `Agents/`, Symlinks nach `~/.claude/agents/`
 
+### Team-Regeln martech per Repo-Import (seit 2026-11-21)
+- `~/.claude/CLAUDE.md` importiert `persoenliche-regeln.md` + `@~/git/martech-team-claude-rules/CLAUDE.md` (statt Vault-Symlink `team-workflow.md`, gelöscht); UDPM-Hinweis steht im Team-Repo. Test in `di-php` bestanden (Image-Repo erkannt, PR nach `main`). Klon muss auf `main` stehen, sonst gelten die Regeln des ausgecheckten Branches
+
 ### UDPM-Imports aus `CLAUDE.md` entfernt (2026-11-20)
 - `~/.claude/CLAUDE.md` importiert jetzt `persoenliche-regeln.md` + `team-workflow.md` (Symlinks in `~/.claude/vault-rules/`); die UDPM-Imports `team-konventionen`, `bcpr-workflow`, `commit-pr-regeln`, `branch-strategie` sind raus, ersetzt durch den Hinweis „nur in `inf-udpm-*`-Repos `Globale Regeln/team/` lesen“
 - `~/.claude/vault-rules/team-workflow.md` → `Globale Regeln/Team-Workflow.md` angelegt (2026-11-20, geprüft). Die vier UDPM-Symlinks dort am 2026-11-20 entfernt; im Ordner liegen nur noch `persoenliche-regeln.md` und `team-workflow.md`

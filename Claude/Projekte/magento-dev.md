@@ -8,6 +8,7 @@ aktualisiert: 2026-11-20
 # magento-dev
 
 ## Zweck
+- **Repo-Art Tool** (nur `main`, PR nach `main`); wird umbenannt in `martech-team-tool-magento-dev` (entschieden 2026-11-21, noch nicht umgesetzt)
 - Lokale Entwicklungsumgebung für die Magento-2-Shops, ein Werkzeug `bin/dev` für alle Shops (Details im `README.md` des Repos)
 - Dient auch als Prüfstand vor Rollouts (`image-diff`, `smoke`), siehe Rollout-Historie unten
 
