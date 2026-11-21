@@ -22,8 +22,11 @@ aktualisiert: 2026-11-21
 - Inhalt: `Dockerfile`, `apache/`, `composer/` (wpackagist-Plugins, ACF Pro), `external_plugins/` (u. a. `rnd-cmp-helper.zip`), `php/zz-cve-2026-109618.ini` (PHP2Shell-Stopgap, in beiden Versions-Branches), `deployment_templates/`, `scripts/`, Altlast `bitbucket-pipelines.yml`
 
 ## Fallstricke
-- **Nightly-Cron feuert vermutlich nicht:** `schedule` läuft bei GitHub nur auf dem Default-Branch (`master`), die Crons liegen aber in den Versions-Branches (gleiches Problem wie bei [[di-php]])
+- ~~Nightly-Cron feuert vermutlich nicht~~ – falsch (korrigiert 2026-11-21): Der Default-Branch `master` enthält eigene Workflows `docker-image-82.yml` / `docker-image-83.yml` mit `schedule` (01:11 / 02:11 UTC) + `workflow_dispatch`, die den jeweiligen Versions-Branch auschecken und bauen → die Nightlies laufen. `master` ist also der „Orchestrator“, nicht verwaist
 - **Drift zwischen Versions-Branches** (2026-11-21 gesehen): 8.2 hat `limit-login-attempts-reloaded` 3.4.2, 8.3 schon 3.4.3; `wp-optimize` `^4` vs `^4.7`
 
 ## Abhängigkeiten / Verknüpfungen
 - Basis für WordPress-Projekte wie [[wp-abovorteil]] (? genaue Abhängigkeit nicht geprüft)
+
+## Offene Punkte
+- **MRT-109** (angelegt 2026-11-21, Backlog): Versions-Branches durch `main` mit Build-Matrix ersetzen (nach Pilot MRT-107); vorab `master` → `main` umbenennen (Admin)
