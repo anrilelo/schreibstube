@@ -3,7 +3,7 @@ repo_remote: github.com/RedaktionsNetzwerk-Deutschland/di-magento2
 shops: []
 shopsystem: magento2
 tags: [projekt, docker, base-image, php]
-aktualisiert: 2026-11-20
+aktualisiert: 2026-11-21
 ---
 # di-magento2
 
@@ -35,6 +35,7 @@ aktualisiert: 2026-11-20
 - [[Server und Sicherheit]], [[Magento]]
 
 ## Fallstricke
+- Default-Branch ist `master` (letzter Commit 2026-06-09), aktiv sind die Versions-Branches; dazu viele Alt-Branches (2.2.x, 2.3.x, 2.4.6-p10/p15, 2.4.7-p9) und erledigte Ticket-Branches (Stand 2026-11-21)
 - Build nur `linux/amd64`; auf Apple Silicon emuliert und langsam. Häufiger Abbruch ist nicht das Dockerfile, sondern die volle Docker-VM (`E: You don't have enough free space in /var/cache/apt/archives/`) → `docker builder prune` / `docker image prune -a` (aus Session 2026-10-21)
 - redis-Extension kam früher per `pecl install redis`; PECL liefert bei weltweiten Massen-Rebuilds zeitweise HTTP 500. Robuster: phpredis-Tarball von GitHub + `docker-php-ext-install redis`. Gilt fürs php-fpm-Base-Image; im aktuellen di-magento2-Dockerfile keine eigene redis-Zeile (aus Session 2026-10-21)
 - Nach PHP-Neubau `docker build --pull`, sonst nimmt Docker das alte Base-Image aus dem Cache
@@ -47,5 +48,5 @@ aktualisiert: 2026-11-20
 - Alle produktiven Shop-Images am 21.10. neu gebaut und am laufenden Container (u.a. Madsack-Prod) als 8.2.35 verifiziert
 
 ## Offene Punkte
-- **?** PHP2Shell-Stopgap-Härtung in der 8.3-Linie bewusst nicht übernommen oder nachzuziehen?
+- **?** PHP2Shell-Stopgap-Härtung in der 8.3-Linie bewusst nicht übernommen oder nachzuziehen? – Befund 2026-11-21 (lokaler Stand, Fetch 2026-11-09): sieht nach **Drift** aus, nicht nach Absicht. `magento-2.4.7-p10-82` hat die Härtung in `php.ini`/`php.conf`, `magento-2.4.7-p10` nicht; umgekehrt hat nur die 8.3-Linie `entrypoint.sh`, `env.dist.php` und `magento2-prepare.sh` im Image. Sonst unterscheiden sich die Linien nur in `FROM php-fpm:8.2/8.3` und dem Image-Tag
 - ecom-middleware: php_admin_flag-PR (ABO-1728-PHP2Shell-php-admin-flag, 910b74a) gemergt; eigene Notiz: [[ecom-middleware]]
