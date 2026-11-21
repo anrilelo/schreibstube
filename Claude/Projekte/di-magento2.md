@@ -8,6 +8,7 @@ aktualisiert: 2026-11-21
 # di-magento2
 
 ## Zweck
+- **Wird umbenannt in `martech-team-di-magento2`** (entschieden 2026-11-21, noch nicht umgesetzt); danach `repo_remote` anpassen
 - Baut das Magento-2.4.7-Base-Image, auf dem alle Shop-Images der Gruppe aufsetzen
 - Ergebnis: `thecustomsolutions/magento2:2.4.7-p10-82` (8.2-Linie) bzw. 8.3-Linie; die Shop-Repos bauen darauf ihr eigenes `thecustomsolutions/shop-*`-Image
 

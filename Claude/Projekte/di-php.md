@@ -3,11 +3,12 @@ repo_remote: github.com/RedaktionsNetzwerk-Deutschland/di-php
 shops: []
 shopsystem: magento2
 tags: [projekt, docker, base-image, php]
-aktualisiert: 2026-11-20
+aktualisiert: 2026-11-21
 ---
 # di-php
 
 ## Zweck
+- **Wird umbenannt in `martech-team-di-php`** (entschieden 2026-11-21, noch nicht umgesetzt); danach `repo_remote` anpassen
 - Baut das eigene PHP-Base-Image der Gruppe (`php-fpm`) für mehrere PHP-Versionen, je eine pro Branch
 - Ersetzt das alte Repo `php-fpm` (vorher Bitbucket Pipelines; Vorlage war dessen Branch `php8.2` unter `/Users/rico/Development/php-fpm`)
 - Zielort sehr wahrscheinlich `thecustomsolutions/php-fpm` (Beleg: [[di-magento2]] baut `FROM thecustomsolutions/php-fpm:8.3`); der genaue Wert steckt in der Repo-Variable `IMAGE_NAME`, nicht direkt einsehbar
@@ -36,5 +37,6 @@ aktualisiert: 2026-11-20
 - Übernahme vom alten Repo: `MAINTAINER` → `LABEL`, überzähliges `\` in letzter Zeile entfernt, `-y` bei `autoremove`, nginx-Zeile gestrichen (in diesem Image kein nginx)
 
 ## Offene Punkte
-- **?** GitHub-Default-Branch ist laut `origin/HEAD` `php8.2`, nicht `main`. Zeitgesteuerte Workflows laufen nur auf dem Default-Branch → der Nightly-Rebuild (`nightly.yml` auf `main`) feuert so vermutlich nicht. Default-Branch auf `main` umstellen
+- **MRT-107** (angelegt 2026-11-21, Backlog): Versions-Branches durch `main` mit Build-Matrix ersetzen (`ARG PHP_VERSION`, Matrix 8.2/8.3, Build bei Merge/PR/nachts, Push nur außerhalb von PRs). Pilot für alle Image-Repos; Default-Branch-Umstellung und Archivieren der php*-Branches danach manuell
+- ~~**?** GitHub-Default-Branch ist laut `origin/HEAD` `php8.2`, nicht `main` … Default-Branch auf `main` umstellen~~ – erledigt: laut `gh` steht der Default-Branch auf GitHub schon auf `main` (geprüft 2026-11-21 von Claude Code); nur das lokale `origin/HEAD` war veraltet → `git remote set-head origin -a`
 - GitHub-Repo-Voraussetzungen: Secrets `MARTECH_DOCKER_HUB_USER`/`PASS` + Variable `IMAGE_NAME` im Repo oder in der Org vorhanden? (sonst bricht der Build sofort ab) — Stand nicht verifiziert

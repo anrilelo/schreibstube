@@ -8,6 +8,7 @@ aktualisiert: 2026-11-21
 # di-wordpress
 
 ## Zweck
+- **Wird umbenannt in `martech-team-di-wordpress`** (entschieden 2026-11-21, noch nicht umgesetzt); danach `repo_remote` anpassen
 - Baut das WordPress-Base-Image `thecustomsolutions/wordpress:<php>` (z. B. `:8.2`, `:8.3`) auf Basis des offiziellen `wordpress:php<version>-apache`
 - Gehört zur Repo-Art „Image-Repos“ (mit [[di-php]] und [[di-magento2]])
 

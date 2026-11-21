@@ -3,7 +3,7 @@ repo_remote: github.com/RedaktionsNetzwerk-Deutschland/mm-madsack-datatrans-paym
 shops: []
 shopsystem: magento2
 tags: [projekt, magento, modul, payment, datatrans]
-aktualisiert: 2026-11-20
+aktualisiert: 2026-11-21
 ---
 # mm-madsack-datatrans-payment
 
@@ -14,7 +14,7 @@ aktualisiert: 2026-11-20
 
 ## Pfade
 - Repo lokal: `/Users/rico/Development/mm-madsack-datatrans-payment`
-- GitHub: `github.com/RedaktionsNetzwerk-Deutschland/mm-madsack-datatrans-payment` (Org RedaktionsNetzwerk-Deutschland); ~~Team-Branch-Strategie Feature → `main` → `staging` → Prod~~ – Konflikt mit [[Team-Workflow]] (2026-11-20): dort Feature → PR `staging` → Abnahme → PR `main`; ? für dieses Repo prüfen
+- GitHub: `github.com/RedaktionsNetzwerk-Deutschland/mm-madsack-datatrans-payment` (Org RedaktionsNetzwerk-Deutschland); ~~Team-Branch-Strategie Feature → `main` → `staging` → Prod~~ – überholt: Magento-Module arbeiten wie Shops, Feature von `main` → PR `staging` → PR `main` (bestätigt 2026-11-21, siehe [[Team-Workflow]])
 - Struktur: `Api`, `Controller`, `Helper` (`DatatransPayment.php`, `RegisterPayment.php`), `Model`, `Plugin`, `etc`, `view`, `i18n`
 
 ## Architektur

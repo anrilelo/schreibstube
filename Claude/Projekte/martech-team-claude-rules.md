@@ -3,7 +3,7 @@ repo_remote: github.com/RedaktionsNetzwerk-Deutschland/martech-team-claude-rules
 shops: []
 shopsystem: keins
 tags: [projekt, regeln]
-aktualisiert: 2026-11-20
+aktualisiert: 2026-11-21
 ---
 # martech-team-claude-rules
 
@@ -25,6 +25,11 @@ Gemeinsame Claude-Code-Regeln des Teams **martech** (4 Personen). Ersetzt für u
 
 - `docs/empfehlungen.md` (2026-11-20) – 6 Vorschläge aus UDPM, **nicht beschlossen, nicht importiert**: Branch-Schutz `main`+`staging`, Merge-Einstellungen (PR_TITLE, delete_branch_on_merge), PR-Status vor Commit, Änderungen aufteilen, Branch-Cleanup mit `LC_ALL=C`, Konflikt-Prüfung bei neuen Regeln
 - `docs/migration.md` – Verweis auf RND/OP-Leitlinie „Claude Code Leitlinien Devs“ (Confluence OP, Seite 5251629059, Autor Martin Kautz, Stand 2026-04-09) + Abweichungen (Commit-Schema, kein `git add .`, staging→main)
+
+- PR #1 (Empfehlungen + Migration) gemergt (21dc7f2)
+- Branch `regeln-pro-repo-art` (2026-11-21, noch nicht committet): `rules/repo-namen.md` (Repo-Art per Präfix `martech-team-di/shop/portal/mod-*`, schrittweises Umbenennen), `rules/repos-images.md` (nur `main`, Build-Matrix, kein `staging`), `team-workflow.md` als Standard für alle übrigen Repos
+
+- Test 2026-11-21 in `di-php` bestanden: Claude Code erkennt Image-Repo, PR für MRT-107 nach `main` (nicht `staging`), Branch von aktuellem `main`, Archivieren nur mit Zustimmung
 
 ## Bewusst anders als UDPM
 - Kein `sync.sh`/`bootstrap.sh`/Autogen-Block, kein Vault-Sync – nur Klon + ein `@`-Import

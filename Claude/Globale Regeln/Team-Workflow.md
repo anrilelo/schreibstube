@@ -8,6 +8,12 @@ aktualisiert: 2026-11-20
 
 Vom User beschrieben am 2026-11-20. Gilt für **unser** Team in allen Repos außer `inf-udpm-*`. Die UDPM-Regeln unter `Globale Regeln/team/` (Team-Repo `inf-udpm-team-claude-rules`) gelten **nur in `inf-udpm-*`-Repos**; bei Widerspruch gewinnt außerhalb davon diese Notiz. Allgemeine Regeln (Secrets, Push-Check, Git-Vorsicht): [[Persönliche-Regeln]].
 
+## Geltung nach Repo-Art (bestätigt 2026-11-21)
+- **Shops, andere Portale (z. B. WordPress) und Magento-Module** arbeiten alle gleich: Feature von `main`, PR nach `staging`, final PR nach `main` (Ablauf unten)
+- **Image-Repos** (`di-php`, `di-wordpress`, `di-magento2`, künftig `martech-team-di-*`): nur `main`, Ticket-Branch → PR nach `main`, kein `staging` (siehe [[di-php]], MRT-107)
+
+- **Namensschema** (2026-11-21): `martech-team-di-*`, `martech-team-shop-*`, `martech-team-portal-*`, `martech-team-mod-*`; Umbenennung Schritt für Schritt. Der Ablauf unten ist der **Standard** für alle Repos ohne Sonder-Präfix
+
 ## Ablauf: vom Ticket bis `main`
 1. **Jira-Ticket** mit der Aufgabenbeschreibung kommt rein
 2. Aus dem Ticket heraus wird ein **Branch im jeweiligen Repo** erzeugt – neue Features **immer von `main`** abzweigen (bestätigt 2026-11-20)
