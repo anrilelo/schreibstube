@@ -35,6 +35,8 @@ Gemeinsame Claude-Code-Regeln des Teams **martech** (4 Personen). Ersetzt für u
 
 - Review: aktuell keine Pflicht (0 Reviews). Merge-Art: nur normaler Merge-Commit, Squash/Rebase in den Soll-Einstellungen gesperrt (2026-11-21, Squash wurde bisher nie gebraucht)
 
+- PR #5 `repos-inventar` (2026-11-21): `repos.yml` (Entwurf, handgepflegt), `module-nutzung.yml` (generiert), `scripts/module-sync.py` (liest `origin/main` der Shops per `git show`, `--fetch`/`--check`; Einrichtung per `.venv` + `scripts/requirements.txt`, weil macOS-Python kein PyYAML hat)
+
 ## Bewusst anders als UDPM
 - Kein `sync.sh`/`bootstrap.sh`/Autogen-Block, kein Vault-Sync – nur Klon + ein `@`-Import
 - Regeln liegen im Repo, nicht im persönlichen Vault

@@ -3,11 +3,12 @@ repo_remote: github.com/RedaktionsNetzwerk-Deutschland/wp-aboplus-karte
 shops: []
 shopsystem: wordpress
 tags: [projekt, docker, apache, php, redirect, aws]
-aktualisiert: 2026-11-20
+aktualisiert: 2026-11-21
 ---
 # wp-aboplus-karte
 
 ## Zweck
+- **Läuft aktuell und wird weiter gebraucht** (bestätigt 2026-11-21), obwohl das alte Portal AboPlus-Karte abgeschaltet ist und nicht reaktiviert wird; alter Bitbucket-Klon `aboplus-karte` lokal gelöscht
 - Übergangs-Redirect-Container, der das alte WordPress-Plugin `madsack-sub-check` ersetzt (altes WP unter `/Users/rico/Development/aboplus-karte`, wird nicht mehr gebraucht)
 - Produktiv unter `www.aboplus-karte.de`, lokal `aboplus.local`
 - Leitet alte Ticket-Links auf das neue Ziel (Eventim / tickets.madsack.de) weiter
