@@ -34,7 +34,16 @@ Vom User beschrieben am 2026-11-20. Gilt für **unser** Team in allen Repos auß
 - Ausnahme Default-Branch: [[wp-abovorteil]] hat `master` statt `main`
 
 ## Offen (? zu klären)
-- Review-Pflicht für PRs (wer gibt frei?), Merge-Art (Merge-Commit, Squash)
+
+## Build und Rollout (bestätigt 2026-11-21)
+- **Shops + Portale:** Merge nach `staging` stößt Rollout an; zusätzlich nächtlicher automatischer Build; alles auch manuell per GitHub Action
+- **Magento-Module:** kein Rollout; Merge nach `staging` oder `main` löst nichts aus
+- Ablauf Shops/Portale: GitHub Actions baut Docker-Image → Push Docker Hub + AWS ECR → bei `staging` zusätzlich ECS-Service-Neustart; bei `main` identisch, aber **ohne** Neustart
+- **Livestellen Produktion = immer händisch** in AWS: Task-Anzahl des ECS-Service auf 1 reduzieren → Service neu starten → Anzahl wieder erhöhen (bestätigt 2026-11-21); Claude Code macht das nie selbst
+
+## Review (bestätigt 2026-11-21)
+- PRs brauchen **aktuell keinen Review**
+- Gemergt wird mit **normalem Merge-Commit**, kein Squash/Zusammenfassen (bestätigt 2026-11-21)
 
 Branch-Rollen (`main`, `staging`, `development`, `qa-prod`): [[Magento]]
 

@@ -31,6 +31,10 @@ Gemeinsame Claude-Code-Regeln des Teams **martech** (4 Personen). Ersetzt für u
 
 - Test 2026-11-21 in `di-php` bestanden: Claude Code erkennt Image-Repo, PR für MRT-107 nach `main` (nicht `staging`), Branch von aktuellem `main`, Archivieren nur mit Zustimmung
 
+- Alle 6 Empfehlungen verbindlich übernommen (2026-11-21, je Repo-Art): neue `rules/github-einstellungen.md` (Ruleset: Standard schützt `main`+`staging`, Images nur `main`; 0 Reviews bis Entscheidung; Merge-Titel = PR-Titel; `delete_branch_on_merge` **aus** bei Standard-Repos, weil der Branch nach dem staging-Merge noch für den PR nach `main` gebraucht wird, **an** bei Images); PR-Status-Check, Aufteilen, Aufräumen mit `LC_ALL=C` in `team-workflow.md`/`repos-images.md`; Konflikt-Prüfung in `CLAUDE.md`. Claude Code setzt Repo-Einstellungen nur nach Zustimmung
+
+- Review: aktuell keine Pflicht (0 Reviews). Merge-Art: nur normaler Merge-Commit, Squash/Rebase in den Soll-Einstellungen gesperrt (2026-11-21, Squash wurde bisher nie gebraucht)
+
 ## Bewusst anders als UDPM
 - Kein `sync.sh`/`bootstrap.sh`/Autogen-Block, kein Vault-Sync – nur Klon + ein `@`-Import
 - Regeln liegen im Repo, nicht im persönlichen Vault
