@@ -27,4 +27,9 @@ Vom User bestätigt (2026-11-20): In (fast) allen Repos (Shop-Repos, Magento) gi
 - Beispiel: [[shop-hildesheim-sub]] (dort liegen `development`, `staging`, `ca-prod` als Remote-Branches)
 - ~~Verhältnis zu [[Branch-Strategie]] / [[BCPR-Workflow]] (Feature-Branch von `main`, PR-Base `main`): kein Widerspruch festgestellt, das Modell ergänzt nur, wofür `staging` dient~~ – überholt (2026-11-20): Das sind UDPM-Regeln, unser Ablauf steht in [[Team-Workflow]]
 
+## Composer-Varianten der Shops (gesehen 2026-11-21)
+- Jeder Shop hat `composer/composer.json` (Module `@dev` = Default-Branch → Produktion), `composer_staging.json` (`dev-staging`) und `composer_dev.json` (`dev-development`), plus `auth.json`
+- Erklärt, warum Moduländerungen erst nach Merge in `staging`/`main` des Moduls und Shop-Rollout sichtbar werden
+- Bitbucket-Anteil der Modul-Repos je Shop (lokaler Stand): madsack-abo 47/79, hildesheim-sub 30/50, stimme 24/40, dumont-abo-v2 20/40, celle-sub 22/39, rnz-v2 20/38, ovb_abo 15/31, mgb-abo 17/30
+
 Siehe auch [[Entwicklungsumgebung]].
